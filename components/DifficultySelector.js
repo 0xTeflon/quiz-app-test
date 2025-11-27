@@ -4,21 +4,9 @@ import Link from "next/link";
 
 export default function DifficultySelector() {
   const difficulties = [
-    {
-      id: "easy",
-      name: "Easy",
-      description: "Simple questions, slower pace.",
-    },
-    {
-      id: "medium",
-      name: "Medium",
-      description: "A bit more challenging.",
-    },
-    {
-      id: "hard",
-      name: "Hard",
-      description: "Fast questions and less time.",
-    },
+    { id: "easy", name: "Easy", description: "Simple questions, slower pace." },
+    { id: "medium", name: "Medium", description: "A bit more challenging." },
+    { id: "hard", name: "Hard", description: "Fast questions and less time." },
   ];
 
   return (

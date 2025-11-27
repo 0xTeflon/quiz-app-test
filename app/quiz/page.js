@@ -1,9 +1,14 @@
-export const dynamic = "force-dynamic";
-export const fetchCache = "force-no-store";
-export const revalidate = false;
+"use client";
 
+export const dynamic = "force-dynamic";
+
+import { Suspense } from "react";
 import QuizClient from "./QuizClient";
 
 export default function QuizPage() {
-  return <QuizClient />;
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <QuizClient />
+    </Suspense>
+  );
 }

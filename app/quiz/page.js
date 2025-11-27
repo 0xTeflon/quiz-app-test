@@ -1,10 +1,12 @@
 "use client";
 
+export const dynamic = "force-dynamic";
+export const fetchCache = "force-no-store";
+
 import { useSearchParams } from "next/navigation";
 import Quiz from "@/components/Quiz";
-import { Suspense } from "react";
 
-function QuizPageContent() {
+export default function QuizPage() {
   const searchParams = useSearchParams();
   const difficulty = searchParams.get("difficulty");
 
@@ -20,12 +22,4 @@ function QuizPageContent() {
   }
 
   return <Quiz difficulty={difficulty} />;
-}
-
-export default function QuizPage() {
-  return (
-    <Suspense fallback={<div className="card">Loading quiz...</div>}>
-      <QuizPageContent />
-    </Suspense>
-  );
 }

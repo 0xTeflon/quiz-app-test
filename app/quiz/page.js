@@ -3,10 +3,11 @@
 export const dynamic = "force-dynamic";
 export const fetchCache = "force-no-store";
 
+import { Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import Quiz from "@/components/Quiz";
 
-export default function QuizPage() {
+function QuizPageContent() {
   const searchParams = useSearchParams();
   const difficulty = searchParams.get("difficulty");
 
@@ -22,4 +23,12 @@ export default function QuizPage() {
   }
 
   return <Quiz difficulty={difficulty} />;
+}
+
+export default function QuizPage() {
+  return (
+    <Suspense fallback={<div>Loading quiz…</div>}>
+      <QuizPageContent />
+    </Suspense>
+  );
 }

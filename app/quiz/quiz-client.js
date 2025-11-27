@@ -3,7 +3,7 @@
 import { useSearchParams } from "next/navigation";
 import Quiz from "@/components/Quiz";
 
-export default function QuizPage() {
+export default function QuizPageClient() {
   const searchParams = useSearchParams();
   const difficulty = searchParams.get("difficulty");
 
